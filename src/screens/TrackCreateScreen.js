@@ -1,8 +1,9 @@
-import "../_mockLocation";
+// import "../_mockLocation";
 import React, { useContext, useCallback } from "react";
 import { View, StyleSheet } from "react-native";
 import { Text } from "react-native-elements";
 import { SafeAreaView, withNavigationFocus } from "react-navigation";
+import { Feather } from "@expo/vector-icons";
 import { Context as LocationContext } from "../context/LocationContext";
 import Map from "../components/Map";
 import useLocation from "../hooks/useLocation";
@@ -34,6 +35,18 @@ const TrackCreateScreen = ({ isFocused }) => {
       </View>
     </SafeAreaView>
   );
+};
+
+TrackCreateScreen.navigationOptions = () => {
+  return {
+    title: "Add Track",
+    tabBarColor: "#3e2465",
+    tabBarIcon: <Feather name="plus-circle" size={24} />,
+    activeTintColor: "#e91e63",
+    labelStyle: {
+      fontSize: 12,
+    },
+  };
 };
 
 const styles = StyleSheet.create({
